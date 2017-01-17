@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="applican">
+  <head>
+    <title><%= title %></title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="javascripts/applican.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body ng-controller="jobsCtrl">
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <hr>
+      <div ng-repeat="application in applications">
+        <ul>
+          <li> {{ application.status }}</li>
+          <li> {{ application.jobTitle }}</li>
+          <li> {{ application.company }}</li>
+          <li> {{ application.link }}</li>
+          <li> {{ application.dateApplied }}</li>
+        </ul>
+      </div>
+    <hr>
+    <h2>Enter New Application</h2>
+    <table>
+      <tr>
+        <th>Application Status</th>
+        <th>Job Title</th>
+        <th>Company</th>
+        <th>Link</th>
+        <th>Date Applied</th>
+      </tr>
+      <form ng-submit="addJob()">
+        <tr>
+          <td><input type="text" ng-model="status" placeholder="Status"/></td>
+          <td><input type="text" ng-model="jobTitle" placeholder="Job Title"/></td>
+          <td><input type="text" ng-model="company" placeholder="Company"/></td>
+          <td><input type="text" ng-model="link" placeholder="Link"/></td>
+          <td><input type="text" ng-model="dateApplied" placeholder="Date Applied"/></td>
+          <td><button type="submit">Submit</button></td>
+        </tr>
+      </form>
+    </table>
+  </body>
+</html>
