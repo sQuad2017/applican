@@ -11,13 +11,25 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <hr>
+    <table>
+      <tr>
+        <th>Application Status</th>
+        <th>Job Title</th>
+        <th>Company</th>
+        <th>Link</th>
+        <th>Date Applied</th>
+      </tr>
+      <tr ng-repeat="application in applications">
+        <td>{{ application.status }}</td>
+        <td>{{ application.jobTitle }}</td>
+        <td>{{ application.company }}</td>
+        <td>{{ application.link }}</td>
+        <td>{{ application.dateApplied }}</td>
+      </tr>
+    </table>
       <div ng-repeat="application in applications">
         <ul>
-          <li> {{ application.status }}</li>
-          <li> {{ application.jobTitle }}</li>
-          <li> {{ application.company }}</li>
-          <li> {{ application.link }}</li>
-          <li> {{ application.dateApplied }}</li>
+
         </ul>
       </div>
     <hr>
